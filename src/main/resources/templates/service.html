@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" 
+th:replace="~{base :: parent(~{::#content},~{::title},~{})}">
+<head>
+    <title>Service Page</title>
+</head>
+<body>
+    <div id="content">
+
+        <!-- Header Section -->
+        <section class="bg-blue-600 text-white py-20 animate__animated animate__fadeInDown">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-4">Our Services</h2>
+                <p class="text-lg max-w-2xl mx-auto">Explore the tools and features we provide to help you manage your contacts efficiently and securely.</p>
+            </div>
+        </section>
+    
+        <!-- Services Section -->
+        <section class="py-20 bg-white animate__animated animate__fadeInUp">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-gray-100 p-8 rounded shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-user-plus text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Add & Edit Contacts</h3>
+                        <p class="text-gray-600">Quickly add, update, and manage contacts with an intuitive interface.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-shield-alt text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Data Security</h3>
+                        <p class="text-gray-600">All your contacts are stored securely with advanced encryption techniques.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-search text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Smart Search</h3>
+                        <p class="text-gray-600">Use intelligent filters and search options to find contacts in seconds.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-mobile-alt text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Responsive Access</h3>
+                        <p class="text-gray-600">Access your contacts anytime on mobile, tablet, or desktop seamlessly.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-cloud-upload-alt text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Cloud Backup</h3>
+                        <p class="text-gray-600">Never lose your contacts again with automatic backups to the cloud.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-headset text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Support & Help</h3>
+                        <p class="text-gray-600">Get 24/7 support from our friendly team for any issue or query.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Call to Action -->
+        <section class="bg-blue-600 text-white py-20 text-center animate__animated animate__fadeInUp">
+            <h2 class="text-3xl font-bold mb-4">Start Managing Your Contacts Smarter Today</h2>
+            <a href="http://localhost:9081/login"
+               class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                Get Started
+            </a>
+        </section>
+    
+        <!-- Footer Section -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2025 Smart Contacts Manager. All rights reserved.</p>
+                <p>Follow us on <a href="https://www.linkedin.com/in/gulrez-sarankar" class="text-blue-400">LinkedIn</a>, 
+                    <a
+                        href="https://www.instagram.com/gulrez_sarankar18/" class="text-blue-400">Instagram</a>.</p>
+            </div>
+        </footer>
+    
+    </div>
+    
+</body>
+</html>

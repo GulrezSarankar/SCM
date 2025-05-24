@@ -1,0 +1,130 @@
+<div data-th-fragment="contact">
+    <!-- Modal wrapper -->
+    <div
+      id="view_contact_modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden fixed inset-0 z-50 bg-black bg-opacity-30 flex items-center justify-center overflow-y-auto"
+    >
+      <!-- Modal card -->
+      <div
+        class="bg-white w-full max-w-xl mx-4 md:mx-auto rounded-xl shadow-xl transition-all duration-300 animate-fadeIn"
+      >
+        <!-- Header -->
+        <div class="flex justify-end p-4 border-b">
+          <button
+            onclick="closeContactModal()"
+            class="text-gray-400 hover:text-gray-600 transition"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+  
+        <!-- Profile section -->
+        <div class="flex flex-col items-center p-5 space-y-2">
+          <img
+            id="contact_image"
+            onerror="this.src='https://static-00.iconduck.com/assets.00/profile-default-icon-2048x2045-u3j7s5nj.png'"
+            class="w-24 h-24 rounded-full border"
+            src=""
+            alt="Profile"
+          />
+          <h3
+            id="contact_name"
+            class="text-xl font-semibold text-gray-800"
+          ></h3>
+          <p id="contact_email" class="text-gray-600 text-sm"></p>
+          <p id="contact_phone" class="text-gray-600 text-sm"></p>
+        </div>
+  
+        <!-- Table -->
+        <div class="px-6 pb-4 overflow-x-auto">
+          <table class="w-full text-sm text-left text-gray-700">
+            <tbody>
+              <tr class="border-t">
+                <th class="py-2 w-10">
+                  <i class="fa-solid fa-location-dot"></i>
+                </th>
+                <td id="contact_address" class="py-2">
+                  Vishesh Khand, Gomti Nagar, Lucknow
+                </td>
+              </tr>
+              <tr class="border-t">
+                <th class="py-2">
+                  <i class="fa-solid fa-user"></i>
+                </th>
+                <td id="contact_about" class="py-2">
+                  He is professional programmer
+                </td>
+              </tr>
+              <tr class="border-t">
+                <th class="py-2">
+                  <i class="fa-regular fa-heart"></i>
+                </th>
+                <td id="contact_favorite" class="py-2">
+                  This is your favorite contact
+                </td>
+              </tr>
+              <tr class="border-t">
+                <th class="py-2">
+                  <i class="fa-solid fa-earth-americas"></i>
+                </th>
+                <td id="contact_website" class="py-2">
+                  www.learncodewithdurgesh.com
+                </td>
+              </tr>
+              <tr class="border-t">
+                <th class="py-2">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </th>
+                <td id="contact_linkedIn" class="py-2">
+                  www.learncodewithdurgesh.com
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <!-- Footer -->
+        <div class="flex justify-center border-t p-4">
+          <button
+            onclick="closeContactModal()"
+            class="px-5 py-2 bg-gray-100 text-sm text-gray-800 rounded hover:bg-gray-200 transition"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Optional: Fade-in animation -->
+  <style>
+    .animate-fadeIn {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+  
