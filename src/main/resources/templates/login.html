@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+
+<head>
+  <title>Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900">
+  <div id="content" class="min-h-screen flex items-center justify-center px-4 py-6 sm:px-6 lg:px-8">
+
+    <div class="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
+
+      <!-- Card -->
+      <div
+        class="p-6 sm:p-7 md:p-8 border-t-4 border-blue-700 bg-white rounded-xl shadow-xl hover:shadow-2xl transition dark:bg-gray-800 dark:border-blue-700">
+
+        <!-- Message -->
+        <div data-th-replace="~{message::messagebox}"></div>
+
+        <!-- Header -->
+        <h2 class="text-center text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white mb-2">Login to Your Account</h2>
+        <p class="text-center text-sm text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
+          Securely access your contact cloud.
+        </p>
+
+        <!-- Error / Logout Message -->
+        <div th:if="${param.error}" class="text-red-600 text-sm mb-2 text-center">Invalid username or password.</div>
+        <div th:if="${param.logout}" class="text-green-600 text-sm mb-2 text-center">You have been logged out.</div>
+
+        <!-- Form -->
+        <form method="post" data-th-action="@{'/authenticate'}" class="space-y-4 sm:space-y-5" novalidate>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-white">Email</label>
+            <input name="email" type="email" id="email" required autocomplete="email" placeholder="example@gmail.com"
+              class="mt-1 w-full p-2.5 sm:p-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-900 text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label for="password" class="block text-sm font-medium text-gray-700 dark:text-white">Password</label>
+            <input name="password" type="password" id="password" required autocomplete="current-password"
+              placeholder="Enter your password"
+              class="mt-1 w-full p-2.5 sm:p-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-900 text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+            <button type="submit"
+              class="w-full sm:flex-1 px-4 py-2 sm:py-3 text-white text-sm sm:text-base bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-2 focus:ring-blue-400 transition dark:bg-blue-600 dark:hover:bg-blue-700">
+              Login
+            </button>
+            <button type="reset"
+              class="w-full sm:flex-1 px-4 py-2 sm:py-3 text-white text-sm sm:text-base bg-gray-600 rounded-lg hover:bg-gray-700 focus:ring-2 focus:ring-gray-400 transition dark:bg-gray-500 dark:hover:bg-gray-600">
+              Reset
+            </button>
+          </div>
+        </form>
+
+        <!-- Divider -->
+        <div class="text-center text-sm text-gray-400 mt-6">OR</div>
+
+        <!-- Google Login -->
+        <a class="flex items-center justify-center gap-2 w-full mt-3 py-2 sm:py-3 px-4 border rounded-lg bg-white text-gray-700 hover:bg-gray-50 transition dark:bg-gray-200 dark:text-black"
+          data-th-href="@{'oauth2/authorization/google'}">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5 sm:w-6 sm:h-6" />
+          <span class="text-sm sm:text-base">Sign in with Google</span>
+        </a>
+
+        <!-- GitHub Login -->
+        <a class="flex items-center justify-center gap-2 w-full mt-3 py-2 sm:py-3 px-4 rounded-lg bg-gray-800 text-white hover:bg-gray-900 transition"
+          data-th-href="@{'/oauth2/authorization/github'}">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 .297a12 12 0 00-3.797 23.419c.6.111.82-.26.82-.577v-2.173c-3.338.726-4.033-1.416-4.033-1.416a3.177 3.177 0 00-1.335-1.754c-1.091-.745.083-.729.083-.729a2.52 2.52 0 011.843 1.24 2.55 2.55 0 003.492.997 2.564 2.564 0 01.762-1.604c-2.665-.304-5.467-1.332-5.467-5.931a4.65 4.65 0 011.238-3.219 4.322 4.322 0 01.117-3.176s1.007-.322 3.3 1.23a11.41 11.41 0 016 0c2.291-1.552 3.297-1.23 3.297-1.23a4.322 4.322 0 01.119 3.176 4.644 4.644 0 011.236 3.219c0 4.61-2.807 5.625-5.479 5.922a2.888 2.888 0 01.823 2.234v3.312c0 .319.218.694.825.576A12.001 12.001 0 0012 .297" />
+          </svg>
+          <span class="text-sm sm:text-base">Sign in with GitHub</span>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    console.log("Login page loaded");
+  </script>
+</body>
+
+</html>

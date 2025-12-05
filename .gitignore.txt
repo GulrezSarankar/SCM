@@ -1,0 +1,22 @@
+# Ignore secret file
+application-secret.properties
+.env
+
+# Java / Spring Boot ignores
+target/
+*.class
+*.jar
+*.war
+*.log
+
+# IDE files
+/.idea/
+/*.iml
+/.vscode/
+/.project
+.classpath
+.settings/
+
+# OS files
+Thumbs.db
+.DS_Store
