@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: scm_sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Gulrez@9080
+    ports:
+      - "1433:1433"
+    volumes:
+      - scm_db:/var/opt/mssql
+    restart: always
+
+  scm_backend:
+    container_name: scm_backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - sqlserver
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:sqlserver://sqlserver:1433;databaseName=scm
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: 12345
+      SERVER_PORT: 9081
+    ports:
+      - "9081:9081"
+    restart: always
+
+volumes:
+  scm_db:
