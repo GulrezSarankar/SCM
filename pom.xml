@@ -15,7 +15,9 @@
     <groupId>com.scm</groupId>
     <artifactId>Smart-Contact-Manager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+
+    <!-- IMPORTANT : JAR packaging for Render -->
+    <packaging>jar</packaging>
 
     <name>Smart-Contact-Manager</name>
     <description>Smart Contact Manager Application</description>
@@ -32,13 +34,13 @@
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
         </dependency>
 
-        <!-- Security (ONLY ONE COPY, NO VERSION) -->
+        <!-- Security -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- Swagger 3 (only one copy) -->
+        <!-- Swagger 3 -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
@@ -96,24 +98,18 @@
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
 
-        <!-- TESTS -->
+        <!-- TEST -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- Tomcat for WAR deployment -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
         <finalName>Smart-Contact-Manager</finalName>
+
         <plugins>
 
             <!-- Compiler Plugin -->
